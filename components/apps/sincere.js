@@ -476,6 +476,5 @@ function Projects() {
 function Resume() {
     return (
         <iframe className="h-full w-full" src="./files/Sincere_Resume.pdf" title="sincere resume" frameBorder="0"></iframe>
-        <iframe className="h-full w-full" src="./files/Sincere_Resume.pdf" title="Sincere Bhattari resume" frameBorder="0"></iframe>
     )
 }
