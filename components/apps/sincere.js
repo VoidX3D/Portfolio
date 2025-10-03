@@ -69,7 +69,7 @@ export class AboutSincere extends Component {
                     <span className=" ml-1 md:ml-2 text-gray-50 ">Resume</span>
                 </div>
                 <div class="my-0.5 w-28 md:w-full h-20 px-2 md:px-2.5 flex justify-center">
-                      <img src="https://github-readme-stats.vercel.app/api?username=VoidX3D&show_icons=true&theme=radical" alt="VoidX3D GitHub stats" class="rounded-md shadow-md w-full"/>
+                <iframe src="https://ghbtns.com/github-btn.html?user=VoidX3D&type=follow&count=true" title="Follow VoidX3D on GitHub" class="my-4 w-5/6 md:w-3/4" frameborder="0" scrolling="0" height="30"></iframe>
                 </div>
             </>
         );
@@ -430,13 +430,9 @@ function Projects() {
                     <div className="bg-white absolute rounded-full p-0.5 md:p-1 top-0 transform -translate-y-1/2 right-full"></div>
                 </div>
             </div>
-            <iframe src="https://ghbtns.com/github-btn.html?user=VoidX3D&type=follow&count=true" 
-            title="Follow VoidX3D on GitHub" 
-            class="my-4 w-5/6 md:w-3/4" 
-            frameborder="0" 
-            scrolling="0" 
-            height="30">
-            </iframe>
+                <div class="my-0.5 w-28 md:w-full h-20 px-2 md:px-2.5 flex justify-center">
+                      <img src="https://github-readme-stats.vercel.app/api?username=VoidX3D&show_icons=true&theme=radical" alt="VoidX3D GitHub stats" class="rounded-md shadow-md w-full"/>
+                </div>
             {
                 project_list.map((project, index) => {
                     const projectNameFromLink = project.link.split('/')
