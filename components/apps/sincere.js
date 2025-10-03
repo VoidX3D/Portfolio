@@ -69,7 +69,7 @@ export class AboutSincere extends Component {
                     <span className=" ml-1 md:ml-2 text-gray-50 ">Resume</span>
                 </div>
                <div class="my-0.5 w-28 md:w-full h-20 px-2 md:px-2.5 pl-1 flex justify-center" >
-                    <iframe src="https://ghbtns.com/github-btn.html?user=VoidX3D&type=follow&count=true" title="Follow-Me" class="pl-4 my-4 w-5/6 md:w-3/4" frameborder="0" scrolling="0" height="30"></iframe>
+                    <iframe src="https://ghbtns.com/github-btn.html?user=VoidX3D&type=follow=true" title="Follow-Me" class="pl-4 my-4 w-5/6 md:w-3/4" frameborder="0" scrolling="0" height="30"></iframe>
                </div>
             </>
         );
@@ -473,6 +473,6 @@ function Projects() {
 }
 function Resume() {
     return (
-        <iframe className="h-full w-full" src="./files/Sincere.pdf" title="sincere bhattarai resume" frameBorder="0"></iframe>
+        <iframe className="h-full w-full" src="./files/Sincere_Resume.pdf" title="sincere bhattarai resume" frameBorder="0"></iframe>
     )
 }
