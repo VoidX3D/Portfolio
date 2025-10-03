@@ -430,8 +430,13 @@ function Projects() {
                     <div className="bg-white absolute rounded-full p-0.5 md:p-1 top-0 transform -translate-y-1/2 right-full"></div>
                 </div>
             </div>
-            <iframe src="https://github.com/voidX3D" title="Sponsor VoidX3D" className='my-4 w-5/6 md:w-3/4' ></iframe>
-
+            <iframe src="https://ghbtns.com/github-btn.html?user=VoidX3D&type=follow&count=true" 
+            title="Follow VoidX3D on GitHub" 
+            class="my-4 w-5/6 md:w-3/4" 
+            frameborder="0" 
+            scrolling="0" 
+            height="30">
+            </iframe>
             {
                 project_list.map((project, index) => {
                     const projectNameFromLink = project.link.split('/')
