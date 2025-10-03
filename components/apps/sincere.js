@@ -69,7 +69,7 @@ export class AboutSincere extends Component {
                     <span className=" ml-1 md:ml-2 text-gray-50 ">Resume</span>
                 </div>
                 <div class="my-0.5 w-28 md:w-full h-20 px-2 md:px-2.5 flex justify-center">
-                <iframe src="https://ghbtns.com/github-btn.html?user=VoidX3D&type=follow&count=true" title="Follow VoidX3D on GitHub" class="pl-4 my-4 w-5/6 md:w-1/3" frameborder="0" scrolling="0" height="30"></iframe>
+                <iframe src="https://ghbtns.com/github-btn.html?user=VoidX3D&type=follow&count=true" title="Follow-Me" class="pl-4 my-4 w-5/6 md:w-3/4" frameborder="0" scrolling="0" height="30"></iframe>
                 </div>
             </>
         );
