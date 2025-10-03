@@ -30,7 +30,7 @@ into it. Replace \*your user id and your service ID with your values in your Ema
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=VoidX3D/voidx3d.github.io&type=Date)](https://star-history.com/#vivek9patel/voidx3d.github.io&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=VoidX3D/ubuntu-sincere.vercel.app&type=Date)](https://star-history.com/#VoidX3D/ubuntu-sincere.vercel.app&Date)
 
 ## This project was made using Create Next App! Here is the scripts that u can run.
 
