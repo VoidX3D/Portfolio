@@ -68,8 +68,8 @@ export class AboutSincere extends Component {
                     <img className=" w-3 md:w-4" alt="Sincere's resume" src="./themes/Yaru/status/download.svg" />
                     <span className=" ml-1 md:ml-2 text-gray-50 ">Resume</span>
                 </div>
-                <div className='my-0.5 w-28 md:w-full h-8 px-2 md:px-2.5 flex' >
-                    <iframe src="https://github.com/VoidX3D" title="Sponsor VoidX3D" width={"100%"} height={"100%"} ></iframe>
+                <div class="my-0.5 w-28 md:w-full h-20 px-2 md:px-2.5 flex justify-center">
+                      <img src="https://github-readme-stats.vercel.app/api?username=VoidX3D&show_icons=true&theme=radical" alt="VoidX3D GitHub stats" class="rounded-md shadow-md w-full"/>
                 </div>
             </>
         );
