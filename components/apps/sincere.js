@@ -69,7 +69,8 @@ export class AboutSincere extends Component {
                     <span className=" ml-1 md:ml-2 text-gray-50 ">Resume</span>
                 </div>
                 <div className='my-0.5 w-28 md:w-full h-8 px-2 md:px-2.5 flex' >
-                    <iframe src="https://imgs.search.brave.com/uda5Yy-ifIQcrT1_LRuZiNYZ2JhIqcHpSl8rnb3bhcU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJjYXQuY29t/L3cvZnVsbC9mLzkv/Yi8xMzAxNTA1LTE5/MjB4MTA4MC1kZXNr/dG9wLTEwODBwLWhh/aWt5dXUtYmFja2dy/b3VuZC5qcGc" title="Sponsor VoidX3D" width={"100%"} height={"100%"} ></iframe>
+                    <iframe src="./public/images/meme/creatorcard.svg" title="Sponsor VoidX3D" width={"100%"} height={"100%"} ></iframe>
+                    <iframe src="./public/images/meme/creatorcard.svg" title="Sponsor VoidX3D" width={"100%"} height={"100%"} ></iframe>
                 </div>
             </>
         );
@@ -430,7 +431,8 @@ function Projects() {
                     <div className="bg-white absolute rounded-full p-0.5 md:p-1 top-0 transform -translate-y-1/2 right-full"></div>
                 </div>
             </div>
-            <iframe src="https://imgs.search.brave.com/uda5Yy-ifIQcrT1_LRuZiNYZ2JhIqcHpSl8rnb3bhcU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJjYXQuY29t/L3cvZnVsbC9mLzkv/Yi8xMzAxNTA1LTE5/MjB4MTA4MC1kZXNr/dG9wLTEwODBwLWhh/aWt5dXUtYmFja2dy/b3VuZC5qcGc" title="Sponsor VoidX3D" className='my-4 w-5/6 md:w-3/4' ></iframe>
+            <iframe src="./public/images/meme/creatorcard.svg" title="Sponsor VoidX3D" className='my-4 w-5/6 md:w-3/4' ></iframe>
+            <iframe src="./public/images/meme/creatorcard.svg" title="Sponsor VoidX3D" className='my-4 w-5/6 md:w-3/4' ></iframe>
 
             {
                 project_list.map((project, index) => {
