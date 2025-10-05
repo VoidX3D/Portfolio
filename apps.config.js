@@ -101,6 +101,15 @@ const apps = [
         screen: () => {},
     },
     {
+      id: "chrome-dino",
+      title: "Chrome Dino",
+      icon: './themes/Yaru/apps/dino-icon.png', // or whatever icon you want
+      disabled: false,
+      favourite: true,
+      desktop_shortcut: true,
+      screen: displayChromeDino, // This is the function your window.js expects
+    },
+    {
         id: "tars",
         title: "Ask Tars",
         icon: './themes/Yaru/apps/tars.svg',
