@@ -1,13 +1,13 @@
-import displaySpotify from './components/apps/spotify';
-import displayVsCode from './components/apps/vscode';
+import { displaySpotify } from './components/apps/spotify';
+import { displayVsCode } from './components/apps/vscode';
 import { displayTerminal } from './components/apps/terminal';
 import { displaySettings } from './components/apps/settings';
 import { displayChrome } from './components/apps/chrome';
+import { displayChromeDino } from './components/apps/chrome-dino';
 import { displayTrash } from './components/apps/trash';
 import { displayGedit } from './components/apps/gedit';
 import { displayTerminalCalc } from './components/apps/calc';
 import { displayAboutSincere } from './components/apps/sincere';
-import { displayChromeDino } from '../components/ChromeDino';
 const apps = [
     {
         id: "chrome",
@@ -17,6 +17,15 @@ const apps = [
         favourite: true,
         desktop_shortcut: true,
         screen: displayChrome,
+    },
+     {
+        id: "chrome-dino",
+        title: "Chrome-Dino",
+        icon: './themes/Yaru/status/dino-icon.png',
+        disabled: false,
+        favourite: true,
+        desktop_shortcut: true,
+        screen: displayChromeDino,
     },
     {
         id: "calc",
@@ -102,15 +111,6 @@ const apps = [
         screen: () => {},
     },
     {
-      id: "chrome-dino",
-      title: "Chrome Dino",
-      icon: './themes/Yaru/apps/dino-icon.png', // or whatever icon you want
-      disabled: false,
-      favourite: true,
-      desktop_shortcut: true,
-      screen: displayChromeDino, // This is the function your window.js expects
-    },
-    {
         id: "tars",
         title: "Ask Tars",
         icon: './themes/Yaru/apps/tars.svg',
@@ -118,7 +118,7 @@ const apps = [
         favourite: false,
         desktop_shortcut: true,
         isExternalApp: true,
-        url: "https://ubuntu.hellotars.com/conv/Orm8EJ",
+        url: "https://www.hellotars.com/voidx3d",
         screen: () => {},
     },
 ]
