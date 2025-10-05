@@ -21,7 +21,7 @@ const apps = [
      {
         id: "chrome-dino",
         title: "Chrome-Dino",
-        icon: './themes/Yaru/status/dino-icon.png',
+        icon: './themes/Yaru/status/dino.png',
         disabled: false,
         favourite: true,
         desktop_shortcut: true,
