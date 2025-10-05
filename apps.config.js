@@ -118,7 +118,7 @@ const apps = [
         favourite: false,
         desktop_shortcut: true,
         isExternalApp: true,
-        url: "https://www.hellotars.com/voidx3d",
+        url: "https://ubuntu.hellotars.com/conv/Orm8EJ",
         screen: () => {},
     },
 ]
