@@ -3,6 +3,7 @@ import { displayVsCode } from './components/apps/vscode';
 import { displayTerminal } from './components/apps/terminal';
 import { displaySettings } from './components/apps/settings';
 import { displayChrome } from './components/apps/chrome';
+import { displayCalendar } from './components/apps/calendar';
 import { displayChromeDino } from './components/apps/chrome-dino';
 import { displayTrash } from './components/apps/trash';
 import { displayGedit } from './components/apps/gedit';
@@ -18,7 +19,7 @@ const apps = [
         desktop_shortcut: true,
         screen: displayChrome,
     },
-     {
+    {
         id: "chrome-dino",
         title: "Chrome-Dino",
         icon: './themes/Yaru/apps/dino.png',
@@ -99,6 +100,15 @@ const apps = [
         desktop_shortcut: true,
         screen: displayGedit,
     },
+     {
+        id: "calendar",
+        title: "Void Calendar",
+        icon: './themes/Yaru/apps/calendar.png',
+        disabled: false,
+        favourite: true,
+        desktop_shortcut: true,
+        screen: displayCalendar,
+    },
     {
         id: "github",
         title: "GitHub",
@@ -108,7 +118,7 @@ const apps = [
         desktop_shortcut: true,
         isExternalApp: true,
         url: "https://github.com/VoidX3D",
-        screen: () => {},
+        screen: () => { },
     },
     {
         id: "tars",
@@ -119,7 +129,7 @@ const apps = [
         desktop_shortcut: true,
         isExternalApp: true,
         url: "https://ubuntu.hellotars.com/conv/Orm8EJ",
-        screen: () => {},
+        screen: () => { },
     },
 ]
 
