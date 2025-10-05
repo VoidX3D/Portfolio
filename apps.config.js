@@ -7,6 +7,7 @@ import { displayTrash } from './components/apps/trash';
 import { displayGedit } from './components/apps/gedit';
 import { displayTerminalCalc } from './components/apps/calc';
 import { displayAboutSincere } from './components/apps/sincere';
+import { displayChromeDino } from '../components/ChromeDino';
 const apps = [
     {
         id: "chrome",
