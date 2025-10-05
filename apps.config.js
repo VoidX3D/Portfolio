@@ -1,8 +1,9 @@
-import displaySpotify from './components/apps/spotify';
-import displayVsCode from './components/apps/vscode';
+import { displaySpotify } from './components/apps/spotify';
+import { displayVsCode } from './components/apps/vscode';
 import { displayTerminal } from './components/apps/terminal';
 import { displaySettings } from './components/apps/settings';
 import { displayChrome } from './components/apps/chrome';
+import { displayChromeDino } from './components/apps/chrome-dino';
 import { displayTrash } from './components/apps/trash';
 import { displayGedit } from './components/apps/gedit';
 import { displayTerminalCalc } from './components/apps/calc';
@@ -16,6 +17,15 @@ const apps = [
         favourite: true,
         desktop_shortcut: true,
         screen: displayChrome,
+    },
+     {
+        id: "chrome-dino",
+        title: "Chrome-Dino",
+        icon: './themes/Yaru/apps/dino.png',
+        disabled: false,
+        favourite: true,
+        desktop_shortcut: true,
+        screen: displayChromeDino,
     },
     {
         id: "calc",
