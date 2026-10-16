@@ -9,9 +9,9 @@ import { displayTrash } from './components/apps/trash';
 import { displayGedit } from './components/apps/gedit';
 import { displayTerminalCalc } from './components/apps/calc';
 import { displayAboutSincere } from './components/apps/sincere';
-import { displayBrave } from './components/apps/brave';
 import { displayHelp } from './components/apps/help';
 import { displayProjects } from './components/apps/projects';
+import { displayFirefox } from './components/apps/firefox';
 import { withBasePath } from './lib/routes';
 const apps = [
     {
@@ -24,13 +24,13 @@ const apps = [
         screen: displayChrome,
     },
     {
-        id: "brave",
-        title: "Brave Browser",
-        icon: './themes/Yaru/apps/brave.svg',
+        id: "firefox",
+        title: "Mozilla Firefox",
+        icon: './themes/Yaru/apps/firefox.svg',
         disabled: false,
         favourite: true,
         desktop_shortcut: true,
-        screen: displayBrave,
+        screen: displayFirefox,
     },
     {
         id: "chrome-dino",
@@ -84,7 +84,7 @@ const apps = [
         disabled: false,
         favourite: true,
         desktop_shortcut: false,
-        screen: displaySpotify, // India Top 50 Playlist 😅
+        screen: displaySpotify, // User-provided VoidX3D playlist
     },
     {
         id: "settings",

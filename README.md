@@ -1,6 +1,6 @@
 # VoidX3D Portfolio
 
-An interactive Ubuntu-style portfolio for **VoidX3D / Sincere Bhattarai**, built with Next.js, React, Tailwind CSS, and a privacy-minded Supabase data layer. The desktop shell includes movable windows, app shortcuts, a local code workspace, Brave-style browser preview, Spotify fallback, portfolio content, and privacy/legal pages.
+An interactive Ubuntu-style portfolio for **VoidX3D / Sincere Bhattarai**, built with Next.js, React, Tailwind CSS, and a privacy-minded Supabase data layer. The desktop shell includes movable windows, app shortcuts, a VS Code-style browser for the official Portfolio repository, a Firefox preview with external fallback, the configured Spotify playlist, GitHub-based profile content, and privacy/legal pages.
 
 ## Live deployments
 
@@ -50,7 +50,7 @@ The app does not intentionally store raw IP addresses or sensitive analytics pay
 
 Apps are registered in `apps.config.js`. Each app should provide a screen renderer, a valid icon under `public/themes/Yaru/apps`, an accessible title, and a graceful external fallback when it depends on another service. Use `components/apps/help.js` as a reference for self-contained app UI.
 
-Legal routes are available at `/privacy`, `/cookies`, and `/terms`. Public profile facts used in the content pass are documented in `docs/public-profile-research.md`.
+Legal routes are available at `/privacy`, `/cookies`, and `/terms`. The old PDF resume has been removed; the About app now uses a Profile tab built from verified public GitHub README facts. Public profile sources used in the content pass are documented in `docs/public-profile-research.md`.
 
 ## Contributing
 

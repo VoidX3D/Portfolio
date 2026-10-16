@@ -19,7 +19,7 @@ export class AboutSincere extends Component {
             "education": <Education />,
             "skills": <Skills />,
             "projects": <Projects />,
-            "resume": <Resume />,
+            "profile": <Profile />,
         }
 
         let lastVisitedScreen = localStorage.getItem("about-section");
@@ -65,9 +65,9 @@ export class AboutSincere extends Component {
                     <img className=" w-3 md:w-4" alt="Sincere's projects" src="./themes/Yaru/status/projects.svg" />
                     <span className=" ml-1 md:ml-2 text-gray-50 ">Projects</span>
                 </div>
-                <div id="resume" tabIndex="0" onFocus={this.changeScreen} className={(this.state.active_screen === "resume" ? " bg-ub-orange bg-opacity-100 hover:bg-opacity-95" : " hover:bg-gray-50 hover:bg-opacity-5 ") + " w-28 md:w-full md:rounded-none rounded-sm cursor-default outline-none py-1.5 focus:outline-none duration-100 my-0.5 flex justify-start items-center pl-2 md:pl-2.5"}>
-                    <img className=" w-3 md:w-4" alt="Sincere's resume" src="./themes/Yaru/status/download.svg" />
-                    <span className=" ml-1 md:ml-2 text-gray-50 ">Resume</span>
+                <div id="profile" tabIndex="0" onFocus={this.changeScreen} className={(this.state.active_screen === "profile" ? " bg-ub-orange bg-opacity-100 hover:bg-opacity-95" : " hover:bg-gray-50 hover:bg-opacity-5 ") + " w-28 md:w-full md:rounded-none rounded-sm cursor-default outline-none py-1.5 focus:outline-none duration-100 my-0.5 flex justify-start items-center pl-2 md:pl-2.5"}>
+                    <img className=" w-3 md:w-4" alt="VoidX3D profile" src="./themes/Yaru/status/contact.svg" />
+                    <span className=" ml-1 md:ml-2 text-gray-50 ">Profile</span>
                 </div>
                <div className="my-0.5 w-28 md:w-full h-20 px-2 md:px-2.5 pl-1 flex justify-center" >
                     <iframe src="https://ghbtns.com/github-btn.html?user=VoidX3D&type=follow&count=true" title="Follow Me on GitHub" className="pl-4 my-4 w-5/6 md:w-3/4" frameBorder="0" scrolling="no" height="30"></iframe>
@@ -107,71 +107,24 @@ export const displayAboutSincere = () => {
 
 function About() {
     return (
-        <>
-            <div className="w-20 md:w-28 my-4 bg-white rounded-full">
-                <img className="w-full" src="./images/logos/bitmoji.png" alt="Sincere Bhattarai Logo" />
+        <div className="w-11/12 max-w-3xl py-6">
+            <div className="flex flex-wrap items-center gap-4">
+                <img className="w-20 rounded-full bg-white" src="./images/logos/bitmoji.png" alt="VoidX3D avatar" />
+                <div><p className="text-xs uppercase tracking-[0.25em] text-orange-300">VoidX3D</p><h1 className="text-2xl font-bold">Full Stack Developer · Backend Engineer · AI Builder</h1><p className="mt-1 text-gray-300">Pokhara, Nepal · self-taught · building production-ready systems</p></div>
             </div>
-            <div className=" mt-4 md:mt-8 text-lg md:text-2xl text-center px-1">
-                <div>my name is <span className="font-bold">Sincere Bhattarai</span> ,</div>
-                <div className="font-normal ml-1">I'm a <span className="text-pink-600 font-bold">Self-Taught Developer!</span></div>
-            </div>
-            <div className=" mt-4 relative md:my-8 pt-px bg-white w-32 md:w-48">
-                <div className="bg-white absolute rounded-full p-0.5 md:p-1 top-0 transform -translate-y-1/2 left-0"></div>
-                <div className="bg-white absolute rounded-full p-0.5 md:p-1 top-0 transform -translate-y-1/2 right-0"></div>
-            </div>
-            <ul className=" mt-4 leading-tight tracking-tight text-sm md:text-base w-5/6 md:w-3/4 emoji-list">
-                <li className=" list-pc">
-                    I'm a <span className=" font-medium">Class 9 Student</span> at Motherland Secondary School, Pokhara.  
-                    I love creating projects with Python, HTML, CSS, and JS, and building anime and web-related tools.  
-                    ( Hit me up <a className='text-underline' href='mailto:playzspreston2@gmail.com'><u>@playzspreston2@gmail.com</u></a> :) )
-                </li>
-                <li className=" mt-3 list-building">I enjoy building fully functional interfaces, APIs, and real-time web apps.</li>
-                <li className=" mt-3 list-time">
-                    When I am not coding my next project, I like to spend my time watching anime, exploring programming ideas, or learning new technologies.
-                </li>
-                <li className=" mt-3 list-star">I also have strong interest in AI, Backend Development, and creating enterprise-level applications!</li>
-            </ul>
-        </>
+            <p className="mt-6 leading-relaxed text-gray-200">I build local-first, privacy-oriented software, AI-powered APIs, and useful tools that ship. My work spans React, Next.js, TypeScript, Python, Kotlin, Node.js, Supabase, and Linux.</p>
+            <div className="mt-5 grid gap-3 md:grid-cols-3"><div className="rounded-lg border border-white/10 bg-black/20 p-3"><p className="text-xs text-orange-300">Focus</p><p className="mt-1 text-sm">Backend architecture, AI integrations, real-time apps</p></div><div className="rounded-lg border border-white/10 bg-black/20 p-3"><p className="text-xs text-orange-300">Build style</p><p className="mt-1 text-sm">Clean architecture, privacy, and practical shipping</p></div><div className="rounded-lg border border-white/10 bg-black/20 p-3"><p className="text-xs text-orange-300">Currently</p><p className="mt-1 text-sm">Learning cloud-native systems, MLOps, and open source</p></div></div>
+            <a className="mt-6 inline-block text-orange-200 underline" href="https://github.com/VoidX3D" target="_blank" rel="noreferrer">Inspect the public GitHub profile →</a>
+        </div>
     )
 }
-
 function Education() {
     return (
-        <>
-            <div className=" font-medium relative text-2xl mt-2 md:mt-4 mb-4">
-                Education
-                <div className="absolute pt-px bg-white mt-px top-full w-full">
-                    <div className="bg-white absolute rounded-full p-0.5 md:p-1 top-0 transform -translate-y-1/2 left-full"></div>
-                    <div className="bg-white absolute rounded-full p-0.5 md:p-1 top-0 transform -translate-y-1/2 right-full"></div>
-                </div>
-            </div>
-            <ul className=" w-10/12  mt-4 ml-4 px-0 md:px-1">
-                <li className="list-disc">
-                    <div className=" text-lg md:text-xl text-left font-bold leading-tight">
-                        Motherland Secondary School, Pokhara
-                    </div>
-                    <div className=" text-sm text-gray-400 mt-0.5">2024 - Present</div>
-                    <div className=" text-sm md:text-base">Class 9D - Self-Taught Computer Studies</div>
-                    <div className="text-sm text-gray-300 font-bold mt-1">Focus &nbsp; AI, Python, HTML, CSS, JS</div>
-                </li>
-                <li className="list-disc mt-5">
-                    <div className=" text-lg md:text-xl text-left font-bold leading-tight">
-                        Class 8
-                    </div>
-                    <div className=" text-sm text-gray-400 mt-0.5">2023 - 2024</div>
-                    <div className=" text-sm md:text-base">Maths, Science, Computers</div>
-                    <div className="text-sm text-gray-300 font-bold mt-1">Achievement &nbsp; Strong coding foundation</div>
-                </li>
-                <li className="list-disc mt-5">
-                    <div className=" text-lg md:text-xl text-left font-bold leading-tight">
-                        Class 7
-                    </div>
-                    <div className=" text-sm text-gray-400 mt-0.5">2022 - 2023</div>
-                    <div className=" text-sm md:text-base">Maths, Science, Computers</div>
-                    <div className="text-sm text-gray-300 font-bold mt-1">Achievement &nbsp; Started building small projects</div>
-                </li>
-            </ul>
-        </>
+        <div className="w-11/12 max-w-3xl py-6">
+            <h2 className="text-2xl font-bold">Learning path</h2>
+            <p className="mt-2 text-gray-300">Public profiles identify Motherland Secondary School in Pokhara. The portfolio avoids inventing formal credentials and focuses on the practical work shipped in public repositories.</p>
+            <div className="mt-5 space-y-3"><div className="rounded-lg border border-white/10 bg-black/20 p-4"><p className="font-bold">Self-taught development</p><p className="mt-1 text-sm text-gray-300">Started with HTML and CSS, then expanded into full-stack development, backend engineering, AI tooling, and system design.</p></div><div className="rounded-lg border border-white/10 bg-black/20 p-4"><p className="font-bold">Current learning</p><p className="mt-1 text-sm text-gray-300">Microservices, event-driven architecture, cloud-native delivery, machine-learning operations, and open-source contribution.</p></div></div>
+        </div>
     )
 }
 function Skills() {
@@ -472,8 +425,13 @@ function Projects() {
         </>
     )
 }
-function Resume() {
+function Profile() {
     return (
-        <iframe className="h-full w-full" src="./files/Sincere_Resume.pdf" title="sincere bhattarai resume" frameBorder="0"></iframe>
+        <div className="w-11/12 max-w-3xl py-6">
+            <p className="text-xs uppercase tracking-[0.25em] text-orange-300">GitHub README profile</p><h2 className="mt-2 text-2xl font-bold">VoidX3D in public</h2>
+            <p className="mt-3 leading-relaxed text-gray-300">A 17-year-old full-stack developer and backend engineer from Pokhara, Nepal, with 3+ years of self-taught experience, focused on production-ready systems and AI-powered tools.</p>
+            <div className="mt-5 flex flex-wrap gap-2">{['TypeScript','JavaScript','Python','Kotlin','Java','Go','Rust','React','Next.js','Supabase','Docker','Linux'].map((skill) => <span key={skill} className="rounded-full border border-white/10 bg-black/20 px-3 py-1 text-xs text-orange-100">{skill}</span>)}</div>
+            <div className="mt-6 flex flex-wrap gap-3"><a className="rounded bg-orange-600 px-3 py-2 text-sm font-bold" href="https://github.com/VoidX3D" target="_blank" rel="noreferrer">GitHub profile</a><a className="rounded border border-white/20 px-3 py-2 text-sm" href="https://github.com/VoidX3D/VoidX3D/blob/main/README.md" target="_blank" rel="noreferrer">Read full README</a></div>
+        </div>
     )
 }

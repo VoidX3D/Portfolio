@@ -2,7 +2,7 @@
 
 ## Scope
 
-Modernize the existing Ubuntu-style portfolio around **VoidX3D** as the primary brand while preserving the interactive desktop concept. The work covers broken apps, new Ubuntu-style apps, visual polish, privacy/legal UX, Supabase-backed analytics and contact logging, SEO, deployment, resume/docs, and cleanup.
+Modernize the existing Ubuntu-style portfolio around **VoidX3D** as the primary brand while preserving the interactive desktop concept. The work covers broken apps, new Ubuntu-style apps, visual polish, privacy/legal UX, Supabase-backed analytics and contact logging, SEO, deployment, profile/docs, and cleanup.
 
 ## Design
 
@@ -42,7 +42,7 @@ Modernize the existing Ubuntu-style portfolio around **VoidX3D** as the primary 
 
 3. **Apps and icons**
    - Replace broken Spotify and VS Code iframe behavior with robust app screens and official external fallback links.
-   - Add Brave Browser as a local browser app with a bundled icon and safe navigation behavior.
+   - Add Firefox as a local browser app with a bundled icon and safe navigation behavior.
    - Add Files, System Monitor, Notes, Weather/Status, and Help apps where their behavior can be self-contained and useful.
    - Verify every registered app has a valid icon, launch screen, close/minimize behavior, and accessible title.
 

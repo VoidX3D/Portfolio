@@ -16,7 +16,7 @@
 
 - [ ] Make Spotify launch reliably with an in-app status/fallback experience and a direct official Spotify link.
 - [ ] Replace the broken VS Code/GitHub1s embed with a local code-browser experience and direct repository links.
-- [ ] Add a Brave Browser app with a bundled local icon and safe navigation behavior.
+- [ ] Add a Firefox app with a bundled Mozilla icon and safe navigation behavior.
 - [ ] Add useful Ubuntu-style apps such as Files, Notes, System Monitor, and Help where they are self-contained.
 - [ ] Verify every app in `apps.config.js` has a valid icon, screen, title, external-link behavior, and open/close/minimize support.
 
