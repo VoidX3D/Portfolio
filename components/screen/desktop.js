@@ -9,6 +9,7 @@ import DesktopMenu from '../context menus/desktop-menu';
 import DefaultMenu from '../context menus/default';
 import $ from 'jquery';
 import ReactGA from 'react-ga4';
+import { trackEvent } from '../../lib/telemetry';
 
 export class Desktop extends Component {
     constructor() {
@@ -363,6 +364,8 @@ export class Desktop extends Component {
     }
 
     openApp = (objId) => {
+
+        trackEvent('app.opened', { app_id: objId });
 
         // google analytics
         ReactGA.event({

@@ -9,6 +9,10 @@ import { displayTrash } from './components/apps/trash';
 import { displayGedit } from './components/apps/gedit';
 import { displayTerminalCalc } from './components/apps/calc';
 import { displayAboutSincere } from './components/apps/sincere';
+import { displayBrave } from './components/apps/brave';
+import { displayHelp } from './components/apps/help';
+import { displayProjects } from './components/apps/projects';
+import { withBasePath } from './lib/routes';
 const apps = [
     {
         id: "chrome",
@@ -18,6 +22,15 @@ const apps = [
         favourite: true,
         desktop_shortcut: true,
         screen: displayChrome,
+    },
+    {
+        id: "brave",
+        title: "Brave Browser",
+        icon: './themes/Yaru/apps/brave.svg',
+        disabled: false,
+        favourite: true,
+        desktop_shortcut: true,
+        screen: displayBrave,
     },
     {
         id: "chrome-dino",
@@ -39,7 +52,7 @@ const apps = [
     },
     {
         id: "about-sincere",
-        title: "About Sincere",
+        title: "About VoidX3D",
         icon: './themes/Yaru/system/user-home.png',
         disabled: false,
         favourite: true,
@@ -81,6 +94,35 @@ const apps = [
         favourite: true,
         desktop_shortcut: false,
         screen: displaySettings,
+    },
+    {
+        id: "help",
+        title: "Help & Shortcuts",
+        icon: './themes/Yaru/apps/help.svg',
+        disabled: false,
+        favourite: false,
+        desktop_shortcut: true,
+        screen: displayHelp,
+    },
+    {
+        id: "projects",
+        title: "VoidX3D Projects",
+        icon: './themes/Yaru/apps/projects.svg',
+        disabled: false,
+        favourite: true,
+        desktop_shortcut: true,
+        screen: displayProjects,
+    },
+    {
+        id: "privacy",
+        title: "Privacy Center",
+        icon: './themes/Yaru/apps/privacy.svg',
+        disabled: false,
+        favourite: false,
+        desktop_shortcut: true,
+        isExternalApp: true,
+        url: `${withBasePath('/privacy')}#settings`,
+        screen: () => { },
     },
     {
         id: "trash",

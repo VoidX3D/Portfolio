@@ -31,6 +31,8 @@ jobs:
       - name: Building 🧱
         run: yarn build
         env:
+          NEXT_PUBLIC_SUPABASE_URL: https://dcjobioiskhfeytlutki.supabase.co
+          NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: sb_publishable_rI2mOb2jeNJVQZ-jAgfj4A_TWhwLYnM
           NEXT_PUBLIC_TRACKING_ID: G-GTG4QNN3BZ
           NEXT_PUBLIC_SERVICE_ID: service_k80dwth
           NEXT_PUBLIC_TEMPLATE_ID: template_f99n8z3

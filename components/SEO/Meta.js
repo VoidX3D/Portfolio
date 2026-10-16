@@ -1,9 +1,9 @@
 import React from 'react'
 import Head from 'next/head'
 
-const siteUrl = 'https://voidx3d.github.io/Portfolio'
-const title = 'Sincere Bhattarai — Developer Portfolio'
-const description = 'Explore Sincere Bhattarai’s interactive Ubuntu-style portfolio, projects, skills, and ways to get in touch.'
+const siteUrl = 'https://voidx3d.vercel.app'
+const title = 'VoidX3D — Privacy-minded Developer Portfolio'
+const description = 'Explore VoidX3D’s interactive Ubuntu-style portfolio, local-first projects, developer tools, and ways to get in touch.'
 
 export default function Meta() {
     return (
@@ -11,8 +11,8 @@ export default function Meta() {
             <title>{title}</title>
             <meta charSet="utf-8" />
             <meta name="description" content={description} />
-            <meta name="author" content="Sincere Bhattarai (VoidX3D)" />
-            <meta name="keywords" content="VoidX3D, Sincere Bhattarai, developer portfolio, React, JavaScript, Ubuntu portfolio" />
+            <meta name="author" content="VoidX3D (Sincere Bhattarai)" />
+            <meta name="keywords" content="VoidX3D, Sincere Bhattarai, developer portfolio, local-first software, privacy-oriented software, React, Next.js, Kotlin, Linux" />
             <meta name="robots" content="index, follow" />
             <meta name="theme-color" content="#E95420" />
             <link rel="canonical" href={`${siteUrl}/`} />
@@ -22,7 +22,7 @@ export default function Meta() {
             <meta property="og:title" content={title} />
             <meta property="og:description" content={description} />
             <meta property="og:url" content={`${siteUrl}/`} />
-            <meta property="og:site_name" content="Sincere Bhattarai Personal Portfolio" />
+            <meta property="og:site_name" content="VoidX3D" />
             <meta property="og:locale" content="en_US" />
             <meta property="og:type" content="website" />
             <meta name="twitter:card" content="summary" />

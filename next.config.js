@@ -5,6 +5,9 @@ const nextConfig = {
   reactStrictMode: true,
   basePath: isGitHubPages ? '/Portfolio' : '',
   assetPrefix: isGitHubPages ? '/Portfolio/' : undefined,
+  env: {
+    NEXT_PUBLIC_BASE_PATH: isGitHubPages ? '/Portfolio' : '',
+  },
 }
 
 module.exports = nextConfig

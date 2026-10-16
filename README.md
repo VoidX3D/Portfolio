@@ -1,63 +1,57 @@
-# Web simulation of UbuntuOS
+# VoidX3D Portfolio
 
-This is a personal portfolio website of theme Ubuntu 20.04, made using Next.js & tailwind CSS.
-If you want to edit this. Clone this project and edit the files in `/src/components`.
+An interactive Ubuntu-style portfolio for **VoidX3D / Sincere Bhattarai**, built with Next.js, React, Tailwind CSS, and a privacy-minded Supabase data layer. The desktop shell includes movable windows, app shortcuts, a local code workspace, Brave-style browser preview, Spotify fallback, portfolio content, and privacy/legal pages.
 
-To run this on localhost
-type `npm start` and when u are done coding type `npm run build` to build your app.
+## Live deployments
 
-_NOTE: if you have yarn just replace `npm start` and `npm run build` with `yarn start` and `yarn build`._
+- Production Vercel: https://voidx3d.vercel.app
+- GitHub Pages: https://voidx3d.github.io/Portfolio/
+- Repository: https://github.com/VoidX3D/Portfolio
 
-<a href="https://buymeacoffee.com/playzspresa" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 40px !important;width: 140px !important;" ></a>
+Vercel is connected to `VoidX3D/Portfolio` and deploys from `main`. GitHub Actions exports the same app and publishes the static bundle to `gh-pages`.
 
-### To make the contact form work
+## Run locally
 
-- Create a account in [emailjs](https://www.emailjs.com/) create also new Outlook or Gmail account to be able
-  to send email.
-- Create a new service, select and log in to your newly created outlook or gmail account on EmailJS.
-- Go back to the dashboard and get the Service ID copy it.
-- Create a .env file in your root folder and put
-
+```bash
+npm install
+npm run dev
 ```
 
-NEXT_PUBLIC_USER_ID = 'YOUR_USER_ID'
-NEXT_PUBLIC_TEMPLATE_ID = 'template_fqqqb9g'
-NEXT_PUBLIC_SERVICE_ID = 'YOUR_SERVICE_ID'
+Open http://localhost:3000. For a production check:
 
+```bash
+npm run build
 ```
 
-into it. Replace \*your user id and your service ID with your values in your EmailJS service.
+The project uses the Pages Router and supports GitHub Pages base-path configuration through `next.config.js` when running in GitHub Actions.
 
-## Star History
+## Environment variables
 
-[![Star History Chart](https://api.star-history.com/svg?repos=VoidX3D/ubuntu-sincere.vercel.app&type=Date)](https://star-history.com/#VoidX3D/ubuntu-sincere.vercel.app&Date)
+Copy `.env.example` to `.env.local`. The Supabase URL and publishable key are safe browser configuration values, but service-role keys must never be committed or exposed to the client.
 
-## This project was made using Create Next App! Here is the scripts that u can run.
+```env
+NEXT_PUBLIC_SUPABASE_URL=https://your-project-ref.supabase.co
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=your-publishable-key
+NEXT_PUBLIC_TRACKING_ID=
+NEXT_PUBLIC_SERVICE_ID=
+NEXT_PUBLIC_TEMPLATE_ID=
+NEXT_PUBLIC_USER_ID=
+```
 
-### `npm start`
+Optional analytics and Vercel insights are consent-gated. Without a Supabase configuration, telemetry safely no-ops. Contact email delivery continues to use the existing EmailJS integration when configured.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Supabase data layer
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The dedicated project is named **VoidX3D Portfolio**. Its migration lives at `supabase/migrations/20261016000000_create_portfolio_data_layer.sql` and defines anonymous sessions, consent events, analytics events, private contact submissions, and published portfolio project content. RLS prevents public reads of telemetry and contact data; browser clients can only insert validated consent and analytics events.
 
-### `npm run build`
+The app does not intentionally store raw IP addresses or sensitive analytics payloads. Optional analytics begin only after the visitor accepts them. Visitors can review or change choices at `/privacy#settings`.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## App authoring
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Apps are registered in `apps.config.js`. Each app should provide a screen renderer, a valid icon under `public/themes/Yaru/apps`, an accessible title, and a graceful external fallback when it depends on another service. Use `components/apps/help.js` as a reference for self-contained app UI.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Legal routes are available at `/privacy`, `/cookies`, and `/terms`. Public profile facts used in the content pass are documented in `docs/public-profile-research.md`.
 
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributiors who wants to make this website better can make contribution,which will be **greatly appreciated**.
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Added some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+Create a feature branch, run the production build, verify both local and static-export behavior, and open a pull request. Keep secrets out of Git, preserve consent boundaries, and prefer accessible fallbacks over fragile embeds.
