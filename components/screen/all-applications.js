@@ -18,19 +18,26 @@ export class AllApplications extends React.Component {
     }
 
     handleChange = (e) => {
+        const query = e.target.value;
         this.setState({
-            query: e.target.value,
-            apps: e.target.value === "" || e.target.value === null ?
-                this.props.apps : this.state.apps.filter(
-                    (app) => app.title.toLowerCase().includes(e.target.value.toLowerCase())
-                )
+            query,
+            apps: this.props.apps.filter(
+                (app) => app.title.toLowerCase().includes(query.toLowerCase())
+            )
         })
     }
 
     renderApps = () => {
 
         let appsJsx = [];
-        let frequentAppsInfo = JSON.parse(localStorage.getItem("frequentApps"));
+        let frequentAppsInfo = [];
+        if (typeof window !== 'undefined') {
+            try {
+                frequentAppsInfo = JSON.parse(localStorage.getItem("frequentApps")) || [];
+            } catch (error) {
+                frequentAppsInfo = [];
+            }
+        }
         let getFrequentApps = () => {
             let frequentApps = [];
             if (frequentAppsInfo) {

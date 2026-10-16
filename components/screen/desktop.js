@@ -54,7 +54,11 @@ export class Desktop extends Component {
             localStorage.setItem("new_folders", JSON.stringify([]));
         }
         else {
-            new_folders = JSON.parse(new_folders);
+            try {
+                new_folders = JSON.parse(new_folders) || [];
+            } catch (error) {
+                new_folders = [];
+            }
             new_folders.forEach(folder => {
                 apps.push({
                     id: `new-folder-${folder.id}`,
@@ -71,9 +75,21 @@ export class Desktop extends Component {
     }
 
     setEventListeners = () => {
-        document.getElementById("open-settings").addEventListener("click", () => {
+        this.settingsButton = document.getElementById("open-settings");
+        this.settingsButton?.addEventListener("click", this.openSettingsFromNavbar);
+        document.addEventListener("keydown", this.handleKeyboardShortcuts);
+    }
+
+    openSettingsFromNavbar = () => {
             this.openApp("settings");
-        });
+    }
+
+    handleKeyboardShortcuts = (event) => {
+        if (event.ctrlKey && event.altKey && event.key.toLowerCase() === 't') {
+            event.preventDefault();
+            this.openApp("terminal");
+        }
+        if (event.key === 'Escape') this.hideAllContextMenu();
     }
 
     setContextListeners = () => {
@@ -85,6 +101,8 @@ export class Desktop extends Component {
     removeContextListeners = () => {
         document.removeEventListener("contextmenu", this.checkContextMenu);
         document.removeEventListener("click", this.hideAllContextMenu);
+        document.removeEventListener("keydown", this.handleKeyboardShortcuts);
+        this.settingsButton?.removeEventListener("click", this.openSettingsFromNavbar);
     }
 
     checkContextMenu = (e) => {
@@ -124,10 +142,7 @@ export class Desktop extends Component {
     }
 
     hideAllContextMenu = () => {
-        let menus = this.state.context_menus;
-        Object.keys(menus).forEach(key => {
-            menus[key] = false;
-        });
+        const menus = Object.keys(this.state.context_menus).reduce((result, key) => ({ ...result, [key]: false }), {});
         this.setState({ context_menus: menus });
     }
 
@@ -199,11 +214,11 @@ export class Desktop extends Component {
         apps.forEach((app) => {
             focused_windows = {
                 ...focused_windows,
-                [app.id]: ((this.state.focused_windows[app.id] !== undefined || this.state.focused_windows[app.id] !== null) ? this.state.focused_windows[app.id] : false),
+                [app.id]: ((this.state.focused_windows[app.id] !== undefined && this.state.focused_windows[app.id] !== null) ? this.state.focused_windows[app.id] : false),
             };
             minimized_windows = {
                 ...minimized_windows,
-                [app.id]: ((this.state.minimized_windows[app.id] !== undefined || this.state.minimized_windows[app.id] !== null) ? this.state.minimized_windows[app.id] : false)
+                [app.id]: ((this.state.minimized_windows[app.id] !== undefined && this.state.minimized_windows[app.id] !== null) ? this.state.minimized_windows[app.id] : false)
             };
             disabled_apps = {
                 ...disabled_apps,
@@ -211,7 +226,7 @@ export class Desktop extends Component {
             };
             closed_windows = {
                 ...closed_windows,
-                [app.id]: ((this.state.closed_windows[app.id] !== undefined || this.state.closed_windows[app.id] !== null) ? this.state.closed_windows[app.id] : true)
+                [app.id]: ((this.state.closed_windows[app.id] !== undefined && this.state.closed_windows[app.id] !== null) ? this.state.closed_windows[app.id] : true)
             };
             favourite_apps = {
                 ...favourite_apps,
@@ -306,14 +321,14 @@ export class Desktop extends Component {
             }
         }
 
-        let overlapped_windows = this.state.overlapped_windows;
+        let overlapped_windows = { ...this.state.overlapped_windows };
         overlapped_windows[objId] = hide;
         this.setState({ hideSideBar: hide, overlapped_windows });
     }
 
     hasMinimised = (objId) => {
-        let minimized_windows = this.state.minimized_windows;
-        var focused_windows = this.state.focused_windows;
+        let minimized_windows = { ...this.state.minimized_windows };
+        var focused_windows = { ...this.state.focused_windows };
 
         // remove focus and minimise this window
         minimized_windows[objId] = true;
@@ -367,7 +382,7 @@ export class Desktop extends Component {
             r.style.transform = `translate(${r.style.getPropertyValue("--window-transform-x")},${r.style.getPropertyValue("--window-transform-y")}) scale(1)`;
 
             // tell childs that his app has been not minimised
-            let minimized_windows = this.state.minimized_windows;
+            let minimized_windows = { ...this.state.minimized_windows };
             minimized_windows[objId] = false;
             this.setState({ minimized_windows: minimized_windows });
             return;
@@ -376,8 +391,8 @@ export class Desktop extends Component {
         //if app is already opened
         if (this.app_stack.includes(objId)) this.focus(objId);
         else {
-            let closed_windows = this.state.closed_windows;
-            let favourite_apps = this.state.favourite_apps;
+            let closed_windows = { ...this.state.closed_windows };
+            let favourite_apps = { ...this.state.favourite_apps };
             var frequentApps = localStorage.getItem('frequentApps') ? JSON.parse(localStorage.getItem('frequentApps')) : [];
             var currentApp = frequentApps.find(app => app.id === objId);
             if (currentApp) {
@@ -405,7 +420,7 @@ export class Desktop extends Component {
             setTimeout(() => {
                 favourite_apps[objId] = true; // adds opened app to sideBar
                 closed_windows[objId] = false; // openes app's window
-                this.setState({ closed_windows, favourite_apps, allAppsView: false }, this.focus(objId));
+                this.setState({ closed_windows, favourite_apps, allAppsView: false }, () => this.focus(objId));
                 this.app_stack.push(objId);
             }, 200);
         }
@@ -421,8 +436,8 @@ export class Desktop extends Component {
         this.hideSideBar(null, false);
 
         // close window
-        let closed_windows = this.state.closed_windows;
-        let favourite_apps = this.state.favourite_apps;
+        let closed_windows = { ...this.state.closed_windows };
+        let favourite_apps = { ...this.state.favourite_apps };
 
         if (this.initFavourite[objId] === false) favourite_apps[objId] = false; // if user default app is not favourite, remove from sidebar
         closed_windows[objId] = true; // closes the app's window

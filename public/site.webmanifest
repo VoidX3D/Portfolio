@@ -1,0 +1,12 @@
+{
+  "name": "Sincere Bhattarai — Portfolio",
+  "short_name": "VoidX3D",
+  "description": "Sincere Bhattarai's interactive Ubuntu-style developer portfolio.",
+  "start_url": "/Portfolio/",
+  "display": "standalone",
+  "background_color": "#111111",
+  "theme_color": "#e95420",
+  "icons": [
+    { "src": "/Portfolio/images/logos/fevicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

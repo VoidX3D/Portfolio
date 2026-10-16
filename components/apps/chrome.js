@@ -50,7 +50,7 @@ export class Chrome extends Component {
                 url = 'https://www.google.com/webhp?igu=1';
                 display_url = "https://www.google.com";
             }
-            this.setState({ url, display_url: url });
+            this.setState({ url, display_url });
             this.storeVisitedUrl(url, display_url);
             document.getElementById("chrome-url-bar").blur();
         }

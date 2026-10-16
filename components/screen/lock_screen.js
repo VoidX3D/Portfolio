@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Clock from '../util components/clock';
 
 export default function LockScreen(props) {
@@ -14,10 +14,15 @@ export default function LockScreen(props) {
         "wall-8": "./images/wallpapers/wall-8.webp",
     };
 
-    if (props.isLocked) {
+    useEffect(() => {
+        if (!props.isLocked) return undefined;
         window.addEventListener('click', props.unLockScreen);
-        window.addEventListener('keypress', props.unLockScreen);
-    };
+        window.addEventListener('keydown', props.unLockScreen);
+        return () => {
+            window.removeEventListener('click', props.unLockScreen);
+            window.removeEventListener('keydown', props.unLockScreen);
+        };
+    }, [props.isLocked, props.unLockScreen]);
 
     return (
         <div id="ubuntu-lock-screen" style={{ zIndex: "100" }} className={(props.isLocked ? " visible translate-y-0 " : " invisible -translate-y-full ") + " absolute outline-none bg-black bg-opacity-90 transform duration-500 select-none top-0 right-0 overflow-hidden m-0 p-0 h-screen w-screen"}>
