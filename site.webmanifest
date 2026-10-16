@@ -1,0 +1,12 @@
+{
+  "name": "VoidX3D — Developer Portfolio",
+  "short_name": "VoidX3D",
+  "description": "VoidX3D's interactive Ubuntu-style, privacy-minded developer portfolio.",
+  "start_url": "/Portfolio/",
+  "display": "standalone",
+  "background_color": "#111111",
+  "theme_color": "#e95420",
+  "icons": [
+    { "src": "/Portfolio/images/logos/fevicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
