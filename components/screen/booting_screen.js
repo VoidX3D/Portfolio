@@ -14,7 +14,7 @@ function BootingScreen(props) {
             <div className="text-white mb-4">
                 <a className="underline" href="https://www.linkedin.com/in/sincere-bhattarai/" rel="noreferrer noopener" target="_blank">linkedin</a>
                 <span className="font-bold mx-1">|</span>
-                <a href="https://github.com/VoidX3D/voidx3d.github.io" rel="noreferrer noopener" target="_blank" className="underline">github</a>
+                <a href="https://github.com/VoidX3D/Portfolio" rel="noreferrer noopener" target="_blank" className="underline">github</a>
             </div>
         </div>
     )
